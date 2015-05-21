@@ -1,8 +1,8 @@
 # Install sqlmap
-class sqlmap {
-
-  # Path to installation directory
-  $installdir = '/usr/share/sqlmap'
+class sqlmap (
+  $installdir = '/usr/share/sqlmap',
+  $source = 'https://github.com/sqlmapproject/sqlmap.git',
+) {
 
   # Create directory to install into
   file { $installdir:
@@ -14,7 +14,7 @@ class sqlmap {
     ensure   => present,
     provider => git,
     path     => $installdir,
-    source   => 'https://github.com/sqlmapproject/sqlmap.git',
+    source   => $source,
     require  => File[$installdir],
   }
 
