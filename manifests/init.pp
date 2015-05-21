@@ -2,6 +2,7 @@
 class sqlmap (
   $installdir = '/usr/share/sqlmap',
   $source = 'https://github.com/sqlmapproject/sqlmap.git',
+  $path = '/usr/local/bin',
 ) {
 
   # Create directory to install into
@@ -19,7 +20,7 @@ class sqlmap (
   }
 
   # Symlink the main script into a bin dir
-  file { '/usr/local/bin/sqlmap':
+  file { "${path}/sqlmap":
     ensure  => link,
     target  => "${installdir}/sqlmap.py",
     require => Vcsrepo['sqlmap'],
