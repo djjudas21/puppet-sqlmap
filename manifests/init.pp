@@ -3,6 +3,7 @@ class sqlmap (
   $installdir = '/usr/share/sqlmap',
   $source = 'https://github.com/sqlmapproject/sqlmap.git',
   $path = '/usr/local/bin',
+  $revision = 'HEAD',
 ) {
 
   # Create directory to install into
@@ -17,6 +18,7 @@ class sqlmap (
     path     => $installdir,
     source   => $source,
     require  => File[$installdir],
+    revision => $revision,
   }
 
   # Symlink the main script into a bin dir

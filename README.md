@@ -26,6 +26,8 @@ For extra control, you can set these parameters.
 * `installdir` is the path to clone the git repo on local filesystem
 * `source` is the URL of the git repo that contains the sqlmap project
 * `path` is the bin path where the script will be symlinked
+* `revision` is the version of code to clone. Defaults to `HEAD` but you can specify a tag or commit. See
+  [vsrepo docs](https://forge.puppetlabs.com/puppetlabs/vcsrepo#git) for full info
 
 This example shows the default value of the parameters.
 
@@ -34,6 +36,7 @@ class { 'sqlmap':
   installdir => '/usr/share/sqlmap',
   source     => 'https://github.com/sqlmapproject/sqlmap.git',
   path       => '/usr/local/bin',
+  revision   => 'HEAD',
 }
 ```
 
