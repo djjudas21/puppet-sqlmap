@@ -24,7 +24,4 @@ class sqlmap {
     target  => "$installdir/sqlmap.py",
     require => Vcsrepo['sqlmap'],
   }
-
-  # Add motd snippet
-  motd::register { 'sqlmap host': }
 }
