@@ -31,7 +31,7 @@ This example shows the default value of the parameters.
 ```puppet
 class { 'sqlmap':
   installdir => '/usr/share/sqlmap',
-  source     >= 'https://github.com/sqlmapproject/sqlmap.git',
+  source     => 'https://github.com/sqlmapproject/sqlmap.git',
 }
 ```
 
