@@ -21,7 +21,7 @@ class sqlmap (
   # Symlink the main script into a bin dir
   file { '/usr/local/bin/sqlmap':
     ensure  => link,
-    target  => "$installdir/sqlmap.py",
+    target  => "${installdir}/sqlmap.py",
     require => Vcsrepo['sqlmap'],
   }
 }
